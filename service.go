@@ -38,6 +38,7 @@ func main() {
 		Update(fmt.Sprintf("%s/daemon.exe", git),"./daemon.exe")
 	}
 
+	os.Mkdir("./secret",os.ModePerm)
 	proxy,err := os.OpenFile("./secret/proxy.json", os.O_RDWR|os.O_CREATE, 0755)
 	if err != nil {
 		panic(err)
